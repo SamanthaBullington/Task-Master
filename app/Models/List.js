@@ -5,13 +5,13 @@ export default class List {
   constructor({ title, id = generateId() }) {
     this.id = id
     this.title = title
-    this.form = form
+    // this.form = form
   }
 
   get Template() {
     return `
     <div class="col-4 mt-3">
-      <div class="bg-light rounded shadow-light">
+      <div class="bg-dark rounded shadow-light">
         <div class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3">
             <h3>${this.title.toUpperCase()}</h3>
             <i class="fa fa-trash action text-danger" title="delete list" onclick="app.ListsController.destroy('${this.id}')"></i>
@@ -28,9 +28,9 @@ export default class List {
                 ${this.MyTasks}
             </ul>
         </div>
-        <form onsubmit="app.ListsController.addTopping('${this.id}')"> 
+        <form onsubmit="app.ListsController.addTask('${this.id}')"> 
           <input type="text" name="task" placeholder="Task..." required>
-          <button type="submit" class="btn btn-outline-success">+</button>
+          <button type="submit" class="btn btn-outline-success">Add task+</button>
         </form>
       </div>
     </div>`
@@ -43,7 +43,7 @@ export default class List {
     tasks.forEach(t => {
       template += t.Template
     })
-    template += `<li>total: ${tasksTotal}</li>`
+    template += `<li>'To-do:'${tasksTotal}</li>`
     if (!template) {
       template += "No tasks"
     }

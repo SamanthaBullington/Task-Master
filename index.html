@@ -24,38 +24,39 @@
 
 
     <main class="container">
-
-        <div class="row m-5">
-            <div class="col-12">
-                <form>
-                    <label for="listName">List Name:</label>
-                    <input type="text" id="listName" name="listname">
-                    <label for="colorpicker">Color Picker:</label>
-                    <input type="color" id="colorpicker" value="#0000ff">
-                    <button type="submit" onclick="app.ListsController.addList()" class="btn btnEdit">Add
-                        List</button>
+        <div id="app">
+            <div class="row m-5">
+                <div class="col-12">
+                    <form>
+                        <label for="listName">List Name:</label>
+                        <input type="text" id="listName" name="listname">
+                        <label for="colorpicker">Color Picker:</label>
+                        <input type="color" id="colorpicker" value="#0000ff">
+                        <button type="submit" onclick="app.ListsController.addList()" class="btn btnEdit">Add
+                            List</button>
+                </div>
+                </form>
             </div>
-            </form>
-        </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="card-body bg-primary">
-                    <h4 class="card-title">Title</h4>
-                    <form>
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        <label for="vehicle1"> I have a bike</label><br>
-                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                        <label for="vehicle2"> I have a car</label><br>
-                    </form>
-                    <form>
-                        <label for="taskName">Task:</label>
-                        <input type="text" id="taskName" name="taskname">
-                    </form>
+            <div class="row">
+                <div class="card">
+                    <div class="card-body bg-primary">
+                        <h4 class="card-title">Title</h4>
+                        <form>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1"> I have a bike</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                            <label for="vehicle2"> I have a car</label><br>
+                        </form>
+                        <form>
+                            <label for="taskName">Task:</label>
+                            <input type="text" id="taskName" name="taskname">
+                        </form>
 
 
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 
