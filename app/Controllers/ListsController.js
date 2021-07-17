@@ -1,12 +1,11 @@
 import { ProxyState } from "../AppState.js";
-import { valuesService } from "../Services/ValuesService.js";
-
+import { listsService } from "../Services/ListsService.js";
 
 //Private
 // function _draw() {
-//   let values = ProxyState.values;
+//   let lists = ProxyState.lists;
 //   let template = ''
-//   values.forEach(v => template += v.Template)
+//   lists.forEach(v => template += v.Template)
 //   document.getElementById("app").innerHTML = /*html*/`
 //   <button className="btn btn-info" onclick="app.valuesController.addValue()">Add Value</button>  
 //   <div className="card-columns values">
@@ -16,14 +15,14 @@ import { valuesService } from "../Services/ValuesService.js";
 // }
 
 //Public
-export default class ValuesController {
-  // constructor() {
-  //   ProxyState.on("values", _draw);
-  //   _draw()
-  // }
+export default class ListsController {
+  constructor() {
+    ProxyState.on("lists", _draw);
+    _draw()
+  }
 
-  addValue() {
-    valuesService.addValue()
+  addList() {
+    listsService.addList()
   }
 
 }

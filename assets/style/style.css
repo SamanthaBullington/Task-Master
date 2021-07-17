@@ -1,1 +1,20 @@
 /* BASIC STYLES HERE */
+input {
+  border-color:black;
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.no-outline:focus {
+  outline: none;
+}
+
+.btnEdit {
+ color: white;
+ font-size: 16pt;
+ font-weight: 600;
+ background-color: rgb(0, 0, 0);
+}
