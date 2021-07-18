@@ -27,18 +27,27 @@
         <div id="app">
             <div class="row m-5">
                 <div class="col-12">
-                    <form>
-                        <label for="listName">List Name:</label>
-                        <input type="text" id="listName" name="listname">
-                        <label for="colorpicker">Color Picker:</label>
-                        <input type="color" id="colorpicker" value="#0000ff">
-                        <button type="submit" onclick="app.ListsController.addList()" class="btn btnEdit">Add
-                            List</button>
+                    <form onsubmit="app.listsController.addList()"
+                        class="d-flex align-items-center justify-content-around">
+
+                        <div class="form-group">
+                            <label for="listName">List Name:</label>
+                            <input type="text" id="listName" name="listname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="colorpicker">Color Picker:</label>
+                            <input type="color" id="colorpicker" value="#0000ff">
+                        </div>
+                        <div class="d-flex">
+                            <button type="submit" class="btn btnEdit">Add
+                                List</button>
+                        </div>
                 </div>
                 </form>
             </div>
-            <div class="row">
-                <div class="card">
+            <div class="row" id="lists">
+                <!-- <div class="card">
                     <div class="card-body bg-primary">
                         <h4 class="card-title">Title</h4>
                         <form>
@@ -54,7 +63,7 @@
 
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         </div>

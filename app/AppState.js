@@ -5,14 +5,14 @@ import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
   /** @type {Value[]} */
-  /** @type {List[]} */
-  /** @type {Task[]} */
   values = []
   lists = [
     new List({
       title: 'Chores',
     })]
+  /** @type {List[]} */
   tasks = []
+  /** @type {Task[]} */
 }
 
 export const ProxyState = new Proxy(new AppState(), {

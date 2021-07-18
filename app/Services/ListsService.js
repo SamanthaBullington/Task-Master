@@ -3,7 +3,7 @@ import List from "../Models/List.js";
 import Task from "../Models/Task.js";
 
 class ListsService {
-  addList() {
+  addList(emptyList) {
     ProxyState.lists = [...ProxyState.lists, new List(emptyList)]
   }
 
@@ -20,4 +20,4 @@ class ListsService {
   }
 
 }
-export const listsService = new ListsService();
+export const listsService = new ListsService()
