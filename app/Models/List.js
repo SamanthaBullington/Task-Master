@@ -43,10 +43,6 @@ export default class List {
     tasks.forEach(t => {
       template += t.Template
     })
-    // template += `<li>'To-do:'${tasksTotal}}</li>`
-    // if (!template) {
-    //   template += "No tasks"
-    // }
     return template
   }
 
