@@ -19,7 +19,7 @@ export default class List {
         
         <div class="p-2 ">
             <p class="taskCard ">
-            <ul class="lighten-50 p-2">
+            <ul class="p-2">
                 ${this.MyTasks}
             </ul>
             </p>
