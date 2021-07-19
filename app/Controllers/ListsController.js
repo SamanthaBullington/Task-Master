@@ -34,7 +34,13 @@ export default class ListsController {
   }
 
   destroy(id) {
-    listsService.destroy(id)
+    if (confirm("Remove List?")) {
+      listsService.destroy(id)
+      console.log("list removed");
+    } else {
+      console.log("List not removed!");
+    }
+
   }
 
   addTask(Id) {
