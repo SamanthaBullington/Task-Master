@@ -26,7 +26,7 @@ export default class List {
         </div>
         <div class= "p-2">
         <form onsubmit="app.listsController.addTask('${this.id}')">
-          <input type="text" name="taskAdd" placeholder="Task..." required>
+          <input type="text" name="taskAdd" placeholder="Task..." required required minlength="3" maxlength="50">
           <button type="submit" class="btn btnEdit">Add task +</button>
         </form>
         </div>
