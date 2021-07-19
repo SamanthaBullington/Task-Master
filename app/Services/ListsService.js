@@ -18,12 +18,11 @@ class ListsService {
   removeTask(id) {
     ProxyState.tasks = ProxyState.tasks.filter(task => task.id != id)
   }
-  toggleCheckbox(id) {
+  toggleCheckbox(taskId) {
     console.log('toggling')
-    // if ()
-    // let mytask = ProxyState.tasks.find(task => task.id == id)
-    // mytask.box = !mytask.box
-    // ProxyState.tasks = [...ProxyState.tasks.filter(task => task.id != id), mytask]
+    let found = ProxyState.tasks.find(t => taskId == t.id)
+    found.check = !found.check
+    ProxyState.tasks = ProxyState.tasks
   }
 
 }

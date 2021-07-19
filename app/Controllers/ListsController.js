@@ -63,9 +63,9 @@ export default class ListsController {
     }
   }
 
-  toggleCheckbox(id) {
-    listsService.toggleCheckbox(id)
-    console.log('id')
+  toggleCheckbox(taskId) {
+    listsService.toggleCheckbox(taskId)
+    console.log('taskId')
   }
 
 }

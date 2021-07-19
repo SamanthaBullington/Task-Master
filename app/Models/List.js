@@ -2,14 +2,15 @@ import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
-  constructor({ title, color, id = generateId() }) {
+  constructor({ title, color, check, id = generateId() }) {
     this.color = color
     this.id = id
     this.title = title
+    this.check = check || false
   }
 
   get Template() {
-    return `
+    return /*html*/ `
     <div class="col-4 m-3 taskCard">
       <div class="rounded shadow-light bg-light">
         <div class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3" style="background-color:${this.color}">
