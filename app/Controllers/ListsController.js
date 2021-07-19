@@ -49,7 +49,12 @@ export default class ListsController {
   }
 
   removeTask(id) {
-    listsService.removeTask(id)
+    if (confirm("Remove Task?")) {
+      listsService.removeTask(id)
+      console.log("task removed");
+    } else {
+      console.log("Task not removed!");
+    }
   }
 
   toggleCheckbox(id) {
