@@ -2,46 +2,50 @@ import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
-  constructor({ title, id = generateId() }) {
+  constructor({ title, color, id = generateId() }) {
+    this.color = color
     this.id = id
     this.title = title
-    // this.form = form
   }
 
   get Template() {
     return `
-    <div class="col-4 mt-3">
-      <div class="bg-dark rounded shadow-light">
-        <div class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3">
-            <h3>${this.title}</h3>
-            <i class="fa fa-trash action text-danger" title="delete list" onclick="app.ListsController.destroy('${this.id}')"></i>
+    <div class="col-4 m-3 taskCard">
+      <div class="rounded shadow-light bg-light">
+        <div class="d-flex justify-content-around align-items-center rounded-top text-light text-center p-3" style="background-color:${this.color}">
+            <h1><b>${this.title}</b></h1>
+            <i class="fa fa-trash-o action" title="delete list" onclick="app.listsController.destroy('${this.id}')"></i>
         </div>
         
         <div class="p-2 ">
-            <p><b>Tasks: </b></p>
-            <ul class="bg-gray lighten-40 p-2 pl-4">
+            <p class="taskCard ">
+            <ul class="lighten-50 p-2">
                 ${this.MyTasks}
             </ul>
+            </p>
         </div>
-        <form onsubmit="app.ListsController.addTask('${this.id}')"> 
-          <input type="text" name="task" placeholder="Task..." required>
-          <button type="submit" class="btn btn-outline-success">Add task +</button>
+        <div class= "p-2">
+        <form onsubmit="app.listsController.addTask('${this.id}')">
+          <input type="text" name="taskAdd" placeholder="Task..." required>
+          <button type="submit" class="btn btnEdit">Add task +</button>
         </form>
+        </div>
       </div>
+    </div>
     </div>`
   }
 
   get MyTasks() {
     let template = ''
-    let tasksTotal = 0
+    let tasksTotal = ''
     let tasks = ProxyState.tasks.filter(task => task.listId === this.id)
     tasks.forEach(t => {
       template += t.Template
     })
-    template += `<li>'To-do:'${tasksTotal}}</li>`
-    if (!template) {
-      template += "No tasks"
-    }
+    // template += `<li>'To-do:'${tasksTotal}}</li>`
+    // if (!template) {
+    //   template += "No tasks"
+    // }
     return template
   }
 

@@ -25,23 +25,24 @@ export default class ListsController {
     event.preventDefault()
     let form = event.target
     let emptyList = {
-      title: form.title.value
+      title: form.listname.value,
+      color: form.colorPicker.value
     }
     listsService.addList(emptyList)
     form.reset()
-    console.log('addlist event')
+    console.log(`addlist event ${emptyList}`)
   }
 
   destroy(id) {
     listsService.destroy(id)
   }
 
-  addTask(listId) {
+  addTask(Id) {
     event.preventDefault()
     let form = event.target
     let emptyTask = {
-      listId,
-      title: form.title.value
+      listId: Id,
+      title: form.taskAdd.value
     }
     listsService.addTask(emptyTask)
     form.reset()
@@ -49,6 +50,11 @@ export default class ListsController {
 
   removeTask(id) {
     listsService.removeTask(id)
+  }
+
+  toggleCheckbox(id) {
+    listsService.toggleCheckbox(id)
+    console.log('id')
   }
 
 }

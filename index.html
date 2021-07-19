@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/style.css">
     <title>Task-Master</title>
@@ -32,12 +33,12 @@
 
                         <div class="form-group">
                             <label for="listName">List Name:</label>
-                            <input type="text" id="listName" name="listname">
+                            <input type="text" id="listName" name="listname" required>
                         </div>
 
                         <div class="form-group">
                             <label for="colorpicker">Color Picker:</label>
-                            <input type="color" id="colorpicker" value="#0000ff">
+                            <input type="color" id="colorPicker" value="#0000ff">
                         </div>
                         <div class="d-flex">
                             <button type="submit" class="btn btnEdit">Add
@@ -47,23 +48,6 @@
                 </form>
             </div>
             <div class="row" id="lists">
-                <!-- <div class="card">
-                    <div class="card-body bg-primary">
-                        <h4 class="card-title">Title</h4>
-                        <form>
-                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                            <label for="vehicle1"> I have a bike</label><br>
-                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                            <label for="vehicle2"> I have a car</label><br>
-                        </form>
-                        <form>
-                            <label for="taskName">Task:</label>
-                            <input type="text" id="taskName" name="taskname">
-                        </form>
-
-
-                    </div>
-                </div> -->
             </div>
         </div>
         </div>

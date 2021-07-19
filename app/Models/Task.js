@@ -1,8 +1,9 @@
-
+import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class Task {
   constructor({ title, listId, id = generateId() }) {
+    this.box = false
     this.id = id
     this.listId = listId
     this.title = title
@@ -10,7 +11,7 @@ export default class Task {
 
 
   get Template() {
-    return `<li>${this.title} 
-    <span class="action" onclick="app.listsController.removeTask('${this.id}')">x</span></li>`
+    return `<li class= "taskCard"><label for="c-heckbox"><div onclick="app.listsController.toggleCheckbox('${this.id}')"><input type="checkbox" class ="m-2">${this.title} 
+    <span input="checkbox"class="fa fa-times action" onclick="app.listsController.removeTask('${this.id}')"></span></label></div></li>`
   }
 }
